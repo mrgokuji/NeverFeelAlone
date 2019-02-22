@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "917104392913",
+    "firebase_url": "https://neverfeelalone-eb76a.firebaseio.com",
+    "project_id": "neverfeelalone-eb76a",
+    "storage_bucket": "neverfeelalone-eb76a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917104392913:android:2eaa4d876ec7500c",
+        "android_client_info": {
+          "package_name": "com.example.ubantu.neverfeelalone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "917104392913-9nl9et3p8u21d91cjg2sdie19tecthcn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ubantu.neverfeelalone",
+            "certificate_hash": "5a23a8a40e31d4ec4a609f8039bd75889f027b80"
+          }
+        },
+        {
+          "client_id": "917104392913-4bv4g4aq4q4qa3pimfg4uvsgcnjcvhh8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPuH7Fufy5C121mob0TdmQnmyP6rEsDy8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "917104392913-4bv4g4aq4q4qa3pimfg4uvsgcnjcvhh8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

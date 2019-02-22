@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NeverFeelAlone</string>
+    <string name="textview">TextView</string>
+    <string name="Test">Test</string>
+    <string name="Result">Result</string>
+    <string name="Heading">Never Feel Alone</string>
+    <string name="Loading">Loading..</string>
+    <string name="Header">Results</string>
+</resources>
