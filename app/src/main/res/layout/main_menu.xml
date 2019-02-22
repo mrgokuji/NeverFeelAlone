@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/harsh">
 
     <TextView
         android:id="@+id/Heading"
@@ -10,12 +11,12 @@
         android:layout_height="130dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:textColor="#3D692E"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="51dp"
         android:layout_marginTop="69dp"
         android:layout_marginEnd="53dp"
         android:text="@string/Heading"
+        android:textColor="#3D692E"
         tools:layout_centerHorizontal="true"
         tools:textSize="30sp" />
 
@@ -42,15 +43,5 @@
         android:layout_marginTop="96dp"
         android:layout_marginEnd="102dp"
         android:text="@string/Result" />
-
-    <ImageView
-        android:id="@+id/back"
-        android:layout_width="1600dp"
-        android:layout_height="800dp"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:contentDescription="TODO"
-        android:src="@drawable/harsh"
-        />
 
 </RelativeLayout>

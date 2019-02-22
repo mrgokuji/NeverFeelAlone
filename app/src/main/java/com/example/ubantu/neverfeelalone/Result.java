@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -13,9 +15,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 
 public class Result extends AppCompatActivity {
     TextView tv;
+    Button clear;
     String finalData;
     private DatabaseReference mDatabase;
     private DatabaseReference demoRef;
@@ -24,12 +28,29 @@ public class Result extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result);
 
-        tv = (TextView) findViewById(R.id.Result);
+        tv = (TextView) findViewById(R.id.s);
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        clear = (Button) findViewById(R.id.clear);
         getResult();
 
         //getKeysFromFile();
+        clear.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                FileOutputStream outputStream;
+                try {
+                    outputStream = openFileOutput("Killer.list", MODE_PRIVATE);
+                    outputStream.close();
+                    finalData = "Loading...\n";
+                    tv.setText(finalData);
+                    getResult();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
+
 
     private void getResult(){
         try{
@@ -37,24 +58,21 @@ public class Result extends AppCompatActivity {
             String mainData = "";
             FileInputStream fin = openFileInput("Killer.list");
             int c;
-            finalData = "Results : ";
+            finalData = "Results :\n";
             while( (c = fin.read()) != -1){
                 if(c == 10){
-                    finalData += "\n";
-                    tv.setText(finalData);
                     if(mainData.equalsIgnoreCase("")){
                         continue;
                     }
                     else{
                         demoRef = mDatabase.child(mainData);
-                        finalData += mainData;
-                        tv.setText(finalData);
                         mainData = "";
                         demoRef.child("Result").addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                finalData += dataSnapshot.getValue();
-                                tv.setText(finalData);
+                               finalData += "\n";
+                               tv.setText(finalData);
                             }
 
                             @Override
@@ -68,7 +86,6 @@ public class Result extends AppCompatActivity {
                 }
                 mainData += Character.toString((char)c);
             }
-            tv.setText(finalData);
         } catch(Exception e){
 
         }
